@@ -28,7 +28,12 @@ $(shell mkdir -p $(OBJD) $(LIBD) $(DEPD))
 
 # C sources
 CSRC=\
+	Insanity-Dev.c \
+	\
+	args/init_data.c \
 	args/Argc.c \
+	args/Argv.c \
+	args/ArgvReset.c 
 
 # Insanity sources
 ISRC=\
