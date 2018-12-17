@@ -66,8 +66,11 @@ $(DLIB): $(DEB_OBJS)
 
 
 
-# Bring in the dependency info for *existing* .o files
+
+# Bring in the dependency info for *existing* .o files, and ignore default rules
 -include $(DEPENDS)
+.SUFFIXES:
+
 
 
 # Compile C object files
@@ -81,7 +84,7 @@ $(OBJD)/%.do: $(SRCD)/%.c
 	$(CC) -c -g $(CFLAGS) $(DEPFLAGS) $< -o $@
 
 # "Compile" insanity C source files
-.PRECIOUS: %.c
+.PRECIOUS: %.ins.c
 %.ins.c: %.ins
 	icc $< $@
 
