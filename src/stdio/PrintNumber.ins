@@ -1,0 +1,38 @@
+:{PrintNumber}:
+
+Show negative sign
+\{$@''"+'+++#~`}
+
+
+Get hundreds digit
+~@~	      Clear backup
+:printh:
+""-           Subtract 100
+~''+~         Add 1 to number of 100s
+/{(printh)}
+={(printh)}	Keep going while grt or equ
+""+
+~''-
+/{"++'----#	       Add 16 to convert to string
+@''-~(printt)}    Set backup to negative 1 to force draw next char
+@+~		       Positive backup may or may not draw next char
+
+
+Get tens digit
+:printt:
+""'-            Subtract 10
+~''/{+}\{-}~    Add or subtract 1 to number of 10s
+/{(printt)}
+={(printt)}		Keep going while grt or equ
+
+""'+			Undo the add 10 to acc
+~''/{-}\{+}		Unto the add or subtract 1 to number of 10s
+
+/{-/{			 Do not print if 0
+"++'----#}}      Add 16 to convert to string
+\{`"+'+++++#}	 Since it is negative always print and add 15 to convert to string
+
+
+Get ones digit
+~"++'----#	Add 16 to convert to string
+@''-#;		Print enter and return

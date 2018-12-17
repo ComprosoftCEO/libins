@@ -1,8 +1,17 @@
+# Files without extensions
+*
+!*/
+!*.*
+
+# Include the makefile
+!makefile
+
 # Prerequisites
 *.d
 
 # Object files
 *.o
+*.do
 *.ko
 *.obj
 *.elf
@@ -50,3 +59,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Vim swap files
+*.sw*
+
+# Insanity code files
+*.ins.c
